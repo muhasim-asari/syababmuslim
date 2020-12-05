@@ -1,0 +1,56 @@
+version: '3'
+services:
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8080:80"
+      # - "443:443"
+    volumes:
+      - ./:/var/www/syababmuslim
+      - ./nginx/app.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - syabab-network
+
+  #MySQL Service
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: syabab
+      MYSQL_ROOT_PASSWORD: "syabab"
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./mysql/scripts:/docker-entrypoint-initdb.d
+    networks:
+      - syabab-network
+
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/var/www/syababmuslim
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - syabab-network
+
+#Docker Networks
+networks:
+  syabab-network:
+    driver: bridge
