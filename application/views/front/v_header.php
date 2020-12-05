@@ -49,7 +49,7 @@
         </div>
         <div class="header-follow">
             <ul>
-                <li>
+                <!-- <li>
                     <a href="<?php echo $pengaturan->link_instagram ?>"><i class="ti-instagram"></i></a>
                 </li>
                 <li>
@@ -57,7 +57,7 @@
                 </li>
                 <li>
                     <a href="<?php echo $pengaturan->link_github ?>"><i class="ti-github"></i></a>
-                </li>
+                </li> -->
             </ul>
             <p>Find me on </p>
         </div>
