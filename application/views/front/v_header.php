@@ -50,10 +50,10 @@
         <div class="header-follow">
             <ul>
                 <li>
-                    <a href="<?php echo $pengaturan->facebook ?>"><i class="ti-instagram"></i></a>
+                    <a href="<?php echo $pengaturan->instagram ?>"><i class="ti-instagram"></i></a>
                 </li>
                 <li>
-                    <a href="<?php echo $pengaturan->instagram ?>"><i class="ti-facebook"></i></a>
+                    <a href="<?php echo $pengaturan->facebook ?>"><i class="ti-facebook"></i></a>
                 </li>
                 <li>
                     <a href="<?php echo $pengaturan->github ?>"><i class="ti-github"></i></a>
