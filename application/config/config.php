@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'https://www.syababmuslim.com';
-$config['base_url'] = 'http://128.199.167.30:8080/';
+$config['base_url'] = 'http://www.syababmuslim.com/';
 
 /*
 |--------------------------------------------------------------------------
